@@ -2,11 +2,16 @@
 
 namespace App\Exceptions;
 
+use App\Http\Traits\ApiTrait;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+	use ApiTrait;
+
 	/**
 	 * A list of the exception types that are not reported.
 	 *
@@ -36,8 +41,18 @@ class Handler extends ExceptionHandler
 	 */
 	public function register()
 	{
-		$this->reportable(function (Throwable $e) {
-			//
-		});
+		$this->reportable(function (Throwable $e) {});
 	}
+
+	public function render($request, Throwable $e)
+	{
+
+		if ($e instanceof NotFoundHttpException) {
+			return $this->apiResponse(404, 'error 404', $request->url().' Not Found, try with correct url');
+		}
+		if ($e instanceof MethodNotAllowedHttpException) {
+			return $this->apiResponse(404, 'error 405', $request->method().' method Not allow for this route, try with correct method');
+		}
+	}
+
 }

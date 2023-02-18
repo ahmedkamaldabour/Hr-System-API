@@ -1,0 +1,2241 @@
+{
+	"info": {
+		"_postman_id": "df42ecc9-5b3f-47d9-be39-d54967e85c86",
+		"name": "HR System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25141358"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.hr",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "already logged in",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@admin.hr",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Feb 2023 13:36:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Feb 2023 13:36:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": null,\n    \"message\": \"You are already logged in\",\n    \"errors\": 200\n}"
+						},
+						{
+							"name": "valdation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@admin.hr",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Feb 2023 13:39:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Feb 2023 13:39:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"401\",\n    \"message\": \"Validation errors\",\n    \"errors\": {\n        \"email\": [\n            \"The email field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "login successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@admin.hr",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:01:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:01:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Logged in successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": 12,\n            \"name\": \"admin\",\n            \"email\": \"admin@admin.hr\",\n            \"email_verified_at\": \"2023-02-14T17:55:00.000000Z\",\n            \"role\": \"owner\",\n            \"phone\": \"123456789\",\n            \"address\": \"Test address\",\n            \"image\": \"default.png\",\n            \"salary\": \"1000000\",\n            \"rate\": \"5\"\n        },\n        \"token\": \"6|CTOABiNPjA5Gb8ivdGNDH15hz25jN8vtAszKjD6O\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Don't send the token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:03:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:03:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+						},
+						{
+							"name": "logout successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:04:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:04:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Logged out successfully\",\n    \"data\": null,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "User profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						},
+						"description": "Get the current login user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Branches CURD",
+			"item": [
+				{
+					"name": "Get All Branches",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/branches",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branches"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all branches Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/branches",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:07:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:07:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "60"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"All branches\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"New Branceh name 1\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Emma Thompson\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"New Branceh name 3\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Ahmed TEST Branch 2\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ahmed TEST Branch 2\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Ahmed TEST Branch 3\"\n        }\n    ],\n    \"errors\": \"null\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Brance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "AHMED",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/branches/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branches",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Branch by ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Errasoft",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/branches/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:09:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:09:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Branch updated\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Errasoft\"\n    },\n    \"errors\": \"null\"\n}"
+						},
+						{
+							"name": "If the id is not exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Errasoft 2",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/branches/100",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches",
+										"100"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:10:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:10:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"404\",\n    \"message\": \"Branch not found\",\n    \"data\": \"null\",\n    \"errors\": \"null\"\n}"
+						},
+						{
+							"name": "Valdation if something",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Errasoft",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/branches/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:14:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:14:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "53"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"401\",\n    \"message\": \"Validation errors\",\n    \"errors\": {\n        \"name\": [\n            \"The name field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "The name already exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "AHMED",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/branches/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:18:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:18:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"401\",\n    \"message\": \"Validation errors\",\n    \"errors\": {\n        \"name\": [\n            \"The name has already been taken.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/branches/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branches",
+								"8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Branch Id not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "delete",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/branches/8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches",
+										"8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:09:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:09:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"404\",\n    \"message\": \"Branch not found\",\n    \"data\": \"null\",\n    \"errors\": \"null\"\n}"
+						},
+						{
+							"name": "Delete Branch successsfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "delete",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/branches/8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches",
+										"8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:20:29 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:20:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Branch deleted\",\n    \"data\": \"null\",\n    \"errors\": \"null\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Stroe New Branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test B",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/branches",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branches"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add New Branch",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Test B",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/branches",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:19:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:19:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Branch created\",\n    \"data\": {\n        \"name\": \"Test B\",\n        \"id\": 8\n    },\n    \"errors\": \"null\"\n}"
+						},
+						{
+							"name": "Valdation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Test B",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/branches",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:21:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:21:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"401\",\n    \"message\": \"Validation errors\",\n    \"errors\": {\n        \"name\": [\n            \"The name field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Deparment CURD",
+			"item": [
+				{
+					"name": "Get All Deparment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/departments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "New Deparment name 3",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/departments/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Deparment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/departments/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stroe New Department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ahmed TEST Deparment 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/departments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Get All Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/employees",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|ZDrjnQgs3DibaP6lxKbzisvKE18hTaknbZ0gK3kl",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/employees/14",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"employees",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store New Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|ZDrjnQgs3DibaP6lxKbzisvKE18hTaknbZ0gK3kl",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ahmed2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dabourdabour29@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ahmed123",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01013828890",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "100000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/employees",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|ZDrjnQgs3DibaP6lxKbzisvKE18hTaknbZ0gK3kl",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "update",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "update@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "branch_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/employees/14",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"employees",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show employee Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/employees/122",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"employees",
+								"122"
+							]
+						},
+						"description": "Show employees infromation by id"
+					},
+					"response": [
+						{
+							"name": "Get Emp. Data By id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/employees/12",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:23:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:23:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Employee\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"admin\",\n        \"email\": \"admin@admin.hr\",\n        \"email_verified_at\": \"2023-02-14T17:55:00.000000Z\",\n        \"role\": \"owner\",\n        \"phone\": \"123456789\",\n        \"address\": \"Test address\",\n        \"image\": \"default.png\",\n        \"salary\": \"1000000\",\n        \"rate\": \"5\",\n        \"branch\": {\n            \"id\": 1,\n            \"name\": \"AHMED\"\n        },\n        \"department\": {\n            \"id\": 3,\n            \"name\": \"New Deparment name 3\"\n        }\n    },\n    \"errors\": \"null\"\n}"
+						},
+						{
+							"name": "Id not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/employees/122",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"122"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:23:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:23:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"404\",\n    \"message\": \"Employee not found\",\n    \"data\": \"null\",\n    \"errors\": \"null\"\n}"
+						}
+					]
+				},
+				{
+					"name": "All employess in deparment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/departments/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments",
+								"1",
+								""
+							]
+						},
+						"description": "Get All employees in the same deparment"
+					},
+					"response": [
+						{
+							"name": "Department ID Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/departments/11/employees",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"departments",
+										"11",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:24:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:24:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"404\",\n    \"message\": \"Department Not Found\",\n    \"data\": \"NULL\",\n    \"errors\": \"NULL\"\n}"
+						},
+						{
+							"name": "All employess in a selected deparment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/departments/1/employees",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"departments",
+										"1",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:24:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:24:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"ALL Employees in Lucy D'Amore department\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Sigurd Jacobs\",\n            \"email\": \"general.russel@example.net\",\n            \"email_verified_at\": \"2023-02-14T17:48:09.000000Z\",\n            \"role\": \"user\",\n            \"phone\": \"929.626.7556\",\n            \"address\": \"3992 Pagac Passage Suite 008\\nPort Camille, TN 11927\",\n            \"image\": \"default.png\",\n            \"salary\": \"6896.9\",\n            \"rate\": \"3\",\n            \"branch\": {\n                \"id\": 2,\n                \"name\": \"Emma Thompson\"\n            }\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Ahmed\",\n            \"email\": \"dabourdabour28@gmail.com\",\n            \"email_verified_at\": null,\n            \"role\": \"admin\",\n            \"phone\": \"01013828890\",\n            \"address\": null,\n            \"image\": null,\n            \"salary\": \"10000\",\n            \"rate\": \"5\",\n            \"branch\": {\n                \"id\": 1,\n                \"name\": \"AHMED\"\n            }\n        }\n    ],\n    \"errors\": \"NULL\"\n}"
+						}
+					]
+				},
+				{
+					"name": "All employess in Branch",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/branches/10/employees",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branches",
+								"10",
+								"employees"
+							]
+						},
+						"description": "Get all employees in the same branch"
+					},
+					"response": [
+						{
+							"name": "All employess in a selseted  Branch",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/branches/1/employees",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches",
+										"1",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:27:29 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:27:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"All employees in AHMED Branch\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"Shany Streich\",\n            \"email\": \"adah91@example.org\",\n            \"email_verified_at\": \"2023-02-14T17:51:31.000000Z\",\n            \"role\": \"user\",\n            \"phone\": \"+15516642171\",\n            \"address\": \"3230 Cathrine Heights Suite 313\\nCamrenbury, AR 55236-3100\",\n            \"image\": \"default.png\",\n            \"salary\": \"1651.75\",\n            \"rate\": \"5\",\n            \"department\": {\n                \"id\": 3,\n                \"name\": \"New Deparment name 3\"\n            }\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Leora Hansen\",\n            \"email\": \"sipes.wilber@example.com\",\n            \"email_verified_at\": \"2023-02-14T17:51:32.000000Z\",\n            \"role\": \"user\",\n            \"phone\": \"513-528-2320\",\n            \"address\": \"219 Dewayne Key Apt. 529\\nPort Adrian, CO 28601\",\n            \"image\": \"default.png\",\n            \"salary\": \"9027.55\",\n            \"rate\": \"3\",\n            \"department\": {\n                \"id\": 5,\n                \"name\": \"Carolyne Torp\"\n            }\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Mr. Santos Little PhD\",\n            \"email\": \"blick.eugene@example.net\",\n            \"email_verified_at\": \"2023-02-14T17:51:32.000000Z\",\n            \"role\": \"user\",\n            \"phone\": \"530-921-3322\",\n            \"address\": \"16696 Volkman Lake\\nParkerville, MT 80952-9580\",\n            \"image\": \"default.png\",\n            \"salary\": \"9290.45\",\n            \"rate\": \"3\",\n            \"department\": {\n                \"id\": 2,\n                \"name\": \"Estevan Monahan\"\n            }\n        },\n        {\n            \"id\": 12,\n            \"name\": \"admin\",\n            \"email\": \"admin@admin.hr\",\n            \"email_verified_at\": \"2023-02-14T17:55:00.000000Z\",\n            \"role\": \"owner\",\n            \"phone\": \"123456789\",\n            \"address\": \"Test address\",\n            \"image\": \"default.png\",\n            \"salary\": \"1000000\",\n            \"rate\": \"5\",\n            \"department\": {\n                \"id\": 3,\n                \"name\": \"New Deparment name 3\"\n            }\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Ahmed\",\n            \"email\": \"dabourdabour28@gmail.com\",\n            \"email_verified_at\": null,\n            \"role\": \"admin\",\n            \"phone\": \"01013828890\",\n            \"address\": null,\n            \"image\": null,\n            \"salary\": \"10000\",\n            \"rate\": \"5\",\n            \"department\": {\n                \"id\": 1,\n                \"name\": \"Lucy D'Amore\"\n            }\n        }\n    ],\n    \"errors\": \"null\"\n}"
+						},
+						{
+							"name": "Branch ID not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/branches/10/employees",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"branches",
+										"10",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:28:04 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 16:28:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"404\",\n    \"message\": \"Branch not found\",\n    \"data\": \"null\",\n    \"errors\": \"null\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "7|WYJrYJW2tgGcydW5Y0WQL1YsRyHyVwSI1E69MVki",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({",
+					"    key: \"Accept\",",
+					"    value: \"application/json\"",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
