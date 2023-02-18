@@ -1486,16 +1486,6 @@
 				{
 					"name": "Delete Employee",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "8|7bQD3ZaCygknLpKV9dscPD1MQsvDuLTMes7STp2C",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [
 							{
@@ -1537,9 +1527,6 @@
 				{
 					"name": "Store New Employee",
 					"request": {
-						"auth": {
-							"type": "noauth"
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1607,16 +1594,6 @@
 				{
 					"name": "Update Employee",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|ZDrjnQgs3DibaP6lxKbzisvKE18hTaknbZ0gK3kl",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -2203,9 +2180,6 @@
 		{
 			"name": "Wrong Route",
 			"request": {
-				"auth": {
-					"type": "noauth"
-				},
 				"method": "GET",
 				"header": [],
 				"url": {
