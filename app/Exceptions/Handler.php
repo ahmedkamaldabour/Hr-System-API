@@ -3,10 +3,12 @@
 namespace App\Exceptions;
 
 use App\Http\Traits\ApiTrait;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
+use function redirect;
 
 class Handler extends ExceptionHandler
 {
@@ -46,13 +48,21 @@ class Handler extends ExceptionHandler
 
 	public function render($request, Throwable $e)
 	{
-
 		if ($e instanceof NotFoundHttpException) {
 			return $this->apiResponse(404, 'error 404', $request->url().' Not Found, try with correct url');
 		}
-		if ($e instanceof MethodNotAllowedHttpException) {
-			return $this->apiResponse(404, 'error 405', $request->method().' method Not allow for this route, try with correct method');
+		if ($e instanceof AuthenticationException) {
+			return $this->unauthenticated($request, $e);
 		}
+	}
+
+	protected function unauthenticated($request, AuthenticationException $exception)
+	{
+		if ($request->expectsJson()) {
+			return $this->apiResponse(412, 'Unauthenticated', 401, null);
+		}
+
+		return redirect()->guest('login');
 	}
 
 }

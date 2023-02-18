@@ -490,9 +490,6 @@
 				{
 					"name": "Get All Branches",
 					"request": {
-						"auth": {
-							"type": "noauth"
-						},
 						"method": "GET",
 						"header": [
 							{
@@ -1494,13 +1491,20 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "6|ZDrjnQgs3DibaP6lxKbzisvKE18hTaknbZ0gK3kl",
+									"value": "8|7bQD3ZaCygknLpKV9dscPD1MQsvDuLTMes7STp2C",
 									"type": "string"
 								}
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -1508,6 +1512,12 @@
 									"key": "_method",
 									"value": "delete",
 									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -1528,14 +1538,7 @@
 					"name": "Store New Employee",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|ZDrjnQgs3DibaP6lxKbzisvKE18hTaknbZ0gK3kl",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
@@ -1544,17 +1547,17 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Ahmed2",
+									"value": "Ahmed25",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "dabourdabour29@gmail.com",
+									"value": "dabourdabour229@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "Ahmed123",
+									"value": "Ahmed12345",
 									"type": "text"
 								},
 								{
@@ -1574,12 +1577,12 @@
 								},
 								{
 									"key": "branch_id",
-									"value": "1",
+									"value": "10000000000",
 									"type": "text"
 								},
 								{
 									"key": "department_id",
-									"value": "1",
+									"value": "100000000000",
 									"type": "text"
 								},
 								{
@@ -2196,6 +2199,82 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Wrong Route",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/notfound",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notfound"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/notfound",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"notfound"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 16:57:44 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 16:57:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"message\": \"error 404\",\n    \"errors\": \"http://127.0.0.1:8000/api/notfound Not Found, try with correct url\"\n}"
+				}
+			]
 		}
 	],
 	"auth": {
@@ -2203,7 +2282,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "7|WYJrYJW2tgGcydW5Y0WQL1YsRyHyVwSI1E69MVki",
+				"value": "9|oR6HUaC6OxL2vcR6V9vYZtohmIHfRD1x7l2IiBZr",
 				"type": "string"
 			}
 		]
