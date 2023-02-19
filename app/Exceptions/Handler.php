@@ -43,13 +43,15 @@ class Handler extends ExceptionHandler
 	 */
 	public function register()
 	{
-		$this->reportable(function (Throwable $e) {});
+		$this->reportable(function (Throwable $e) {
+			return $this->apiResponse(500, 'error 500', $e->getMessage(), null);
+		});
 	}
 
 	public function render($request, Throwable $e)
 	{
 		if ($e instanceof NotFoundHttpException) {
-			return $this->apiResponse(404, 'error 404', $request->url().' Not Found, try with correct url');
+			return $this->apiResponse(404, 'Page Not Found', $request->url().' Not Found, try with correct url', null);
 		}
 		if ($e instanceof AuthenticationException) {
 			return $this->unauthenticated($request, $e);
@@ -59,7 +61,7 @@ class Handler extends ExceptionHandler
 	protected function unauthenticated($request, AuthenticationException $exception)
 	{
 		if ($request->expectsJson()) {
-			return $this->apiResponse(412, 'Unauthenticated', 401, null);
+			return $this->apiResponse(401, 'Unauthenticated', null, null);
 		}
 
 		return redirect()->guest('login');
