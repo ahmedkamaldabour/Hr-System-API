@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
 		//		 add 2 branches to the database form the factory class
 		\App\Models\Branch::factory(2)->create();
 		//		 add 10 users to the database form the factory class
-		\App\Models\User::factory(8)->create();
+		\App\Models\User::factory(50)->create();
 
 		//		make admin user
 		\App\Models\User::factory()->create([
@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
 			'salary'            => '1000000',
 			'rate'              => '5',
 		]);
+
 
 	}
 }

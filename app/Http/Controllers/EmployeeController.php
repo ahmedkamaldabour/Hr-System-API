@@ -23,7 +23,7 @@ class EmployeeController extends Controller
 	{
 		try {
 			// get all employees
-			$employees = $this->employee::get();
+			$employees = $this->employee::paginate();
 			return $this->apiResponse('200', 'All employees', 'null', $employees);
 		} catch (\Exception $e) {
 			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'null');

@@ -84,7 +84,7 @@ class DepartmentController extends Controller
 			$department = $this->department->find($id);
 			if ($department) {
 				// get department employees
-				$employees = $department->users()->with('branch')->get();
+				$employees = $department->users()->with('branch')->paginate();
 				return $this->apiResponse('200', 'ALL Employees in '.$department->name.' department', 'NULL', $employees);
 			} else {
 				return $this->apiResponse('404', 'Department Not Found', 'NULL', 'NULL');

@@ -8,7 +8,9 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
+use function dd;
 use function redirect;
+use function request;
 
 class Handler extends ExceptionHandler
 {
@@ -43,15 +45,16 @@ class Handler extends ExceptionHandler
 	 */
 	public function register()
 	{
-		$this->reportable(function (Throwable $e) {
-			return $this->apiResponse(500, 'error 500', $e->getMessage(), null);
-		});
+		$this->reportable(function (Throwable $e) {});
 	}
 
 	public function render($request, Throwable $e)
 	{
 		if ($e instanceof NotFoundHttpException) {
-			return $this->apiResponse(404, 'Page Not Found', $request->url().' Not Found, try with correct url', null);
+			return $this->apiResponse(404, 'Page Not Found', $request->url().' Not Found, try with correct url', "null");
+		}
+		if ($e instanceof MethodNotAllowedHttpException) {
+			return $this->apiResponse(405, 'Method Not Allowed', $request->method().' Method Not Allowed, try with correct method', 'null');
 		}
 		if ($e instanceof AuthenticationException) {
 			return $this->unauthenticated($request, $e);
@@ -63,7 +66,6 @@ class Handler extends ExceptionHandler
 		if ($request->expectsJson()) {
 			return $this->apiResponse(401, 'Unauthenticated', null, null);
 		}
-
 		return redirect()->guest('login');
 	}
 

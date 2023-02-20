@@ -80,7 +80,7 @@ class BranchController extends Controller
 		try {
 			$branch = $this->branch::find($id);
 			if ($branch) {
-				$employees = $branch->users()->with('department')->get();
+				$employees = $branch->users()->with('department')->paginate();
 				return $this->apiResponse('200', 'All employees in '.$branch->name.' Branch', 'null', $employees);
 			} else {
 				return $this->apiResponse('404', 'Branch not found', 'null', 'null');
