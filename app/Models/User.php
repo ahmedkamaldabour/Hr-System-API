@@ -92,4 +92,10 @@ class User extends Authenticatable
 	{
 		return $this->hasMany(Vacation::class);
 	}
+
+	// user has many salaries
+	public function salaries()
+	{
+		return $this->hasMany(Salary::class);
+	}
 }
