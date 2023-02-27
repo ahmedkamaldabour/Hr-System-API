@@ -14,13 +14,13 @@ return new class extends Migration {
 	{
 		Schema::create('attendances', function (Blueprint $table) {
 			$table->id();
-			$table->foreignId('employee_id')->constrained('employees')->onDelete('cascade');
-			$table->time('attendance_time');
-			$table->time('leaving_time');
+			$table->foreignId('employee_id')->constrained('users');
+			$table->time('attendance_time')->nullable();
+			$table->time('leaving_time')->nullable();
 			$table->double('working_hours')->nullable();
 			$table->double('overtime')->nullable()->default(0);
-			$table->date('attendance_date');
-			$table->string('attendance_status');
+			$table->date('attendance_date')->nullable();
+			$table->enum('attendance_status', ['present', 'absent', 'leave'])->default('present');
 			$table->timestamps();
 		});
 	}

@@ -27,10 +27,12 @@ class UserFactory extends Factory
 			'phone'             => fake()->phoneNumber(),
 			'address'           => fake()->address(),
 			'image'             => 'default.png',
-			'salary'            => fake()->randomFloat(2, 1000, 10000),
 			'rate'              => fake()->numberBetween(1, 5),
 			'department_id'     => fake()->numberBetween(1, 5),
 			'branch_id'         => fake()->numberBetween(1, 2),
+			'position_id'       => fake()->numberBetween(1, 3),
+			'over_time_type_id' => fake()->numberBetween(1, 3),
+			'period_id'         => fake()->numberBetween(1, 3),
 		];
 	}
 

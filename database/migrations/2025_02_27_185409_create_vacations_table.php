@@ -14,9 +14,9 @@ return new class extends Migration {
 	{
 		Schema::create('vacations', function (Blueprint $table) {
 			$table->id();
-			$table->foreignId('employee_id')->constrained('employees')->onDelete('cascade');
-			$table->date('start_date');
-			$table->date('end_date');
+			$table->foreignId('employee_id')->constrained('users');
+			$table->date('start_date')->nullable();
+			$table->date('end_date')->nullable();
 			$table->enum('vacation_type', ['pending', 'approved', 'rejected'])->default('pending');
 			$table->timestamps();
 		});

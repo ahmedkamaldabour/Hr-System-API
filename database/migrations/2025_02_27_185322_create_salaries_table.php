@@ -14,7 +14,7 @@ return new class extends Migration {
 	{
 		Schema::create('salaries', function (Blueprint $table) {
 			$table->id();
-			$table->foreignId('employee_id')->constrained('employees');
+			$table->foreignId('employee_id')->constrained('users');
 			$table->double('amount');
 			$table->double('over_time');
 			$table->double('bonus');

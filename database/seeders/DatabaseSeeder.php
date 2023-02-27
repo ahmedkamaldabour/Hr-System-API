@@ -22,12 +22,15 @@ class DatabaseSeeder extends Seeder
 		//     'email' => 'test@example.com',
 		// ]);
 
-		//		 add 10 departments to the database form the factory class
 		\App\Models\Department::factory(5)->create();
-		//		 add 2 branches to the database form the factory class
 		\App\Models\Branch::factory(2)->create();
-		//		 add 10 users to the database form the factory class
-		\App\Models\User::factory(50)->create();
+		\App\Models\OvertimeType::factory(3)->create();
+		\App\Models\Period::factory(3)->create();
+		\App\Models\Position::factory(3)->create();
+		\App\Models\User::factory(10)->create();
+		\App\Models\Salary::factory(3)->create();
+		\App\Models\Attendance::factory(3)->create();
+		\App\Models\Vacation::factory(3)->create();
 
 		//		make admin user
 		\App\Models\User::factory()->create([
@@ -40,7 +43,6 @@ class DatabaseSeeder extends Seeder
 			'phone'             => '123456789',
 			'address'           => 'Test address',
 			'image'             => 'default.png',
-			'salary'            => '1000000',
 			'rate'              => '5',
 		]);
 

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vacations extends Model
+class Vacation extends Model
 {
 	use HasFactory;
 
@@ -20,7 +20,7 @@ class Vacations extends Model
 	// vacation belongs to one employee
 	public function employee()
 	{
-		return $this->belongsTo(Employee::class);
+		return $this->belongsTo(User::class);
 	}
 
 }

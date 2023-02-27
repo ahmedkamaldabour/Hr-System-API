@@ -90,6 +90,6 @@ class User extends Authenticatable
 	// user has many vacations
 	public function vacations()
 	{
-		return $this->hasMany(Vacations::class);
+		return $this->hasMany(Vacation::class);
 	}
 }
