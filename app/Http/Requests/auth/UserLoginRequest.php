@@ -30,14 +30,14 @@ class userLoginRequest extends FormRequest
 	{
 		return [
 			'email'    => 'required|email|exists:users,email',
-			'password' => 'required',
+			'password' => 'required|min:6|max:20',
 		];
 	}
 
 	public function failedValidation(Validator $validator)
 	{
 		throw new HttpResponseException($this->apiResponse(
-			'401', 'Validation errors', $validator->errors(), null,));
+			'401', 'Validation errors', $validator->errors(), null));
 	}
 
 }

@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\auth\UserLoginRequest;
 use App\Http\Traits\ApiTrait;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use function auth;
+
 
 class AuthController extends Controller
 {
@@ -28,18 +29,19 @@ class AuthController extends Controller
 
 	public function user()
 	{
-		$user = auth()->user();
+		$user = Auth::guard('sanctum')->user();
+		//		$user = auth()->user();
 		if (!$user) {
 			return $this->apiResponse('401', 'Invalid Credentials', null, null);
 		}
 		// get his department and branch
 		$user = $user->load('department', 'branch');
-		return $this->apiResponse('200', 'User data', null, $user);
+		return $this->apiResponse('200', 'User data', 'null', $user);
 	}
 
 	public function logout()
 	{
-		auth()->user()->tokens()->delete();
+		Auth::guard('sanctum')->user()->currentAccessToken()->delete();
 		return $this->apiResponse('200', 'Logged out successfully', null, null);
 	}
 

@@ -68,4 +68,28 @@ class User extends Authenticatable
 	{
 		return $this->belongsTo(Department::class);
 	}
+
+	// user has many attendances
+	public function attendances()
+	{
+		return $this->hasMany(Attendance::class);
+	}
+
+	// user has one over time type
+	public function overTimeType()
+	{
+		return $this->hasOne(OverTimeType::class);
+	}
+
+	// user has period
+	public function period()
+	{
+		return $this->hasOne(Period::class);
+	}
+
+	// user has many vacations
+	public function vacations()
+	{
+		return $this->hasMany(Vacations::class);
+	}
 }

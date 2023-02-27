@@ -20,11 +20,12 @@ return new class extends Migration {
 			$table->string('phone')->nullable();
 			$table->string('address')->nullable();
 			$table->string('image')->nullable();
-			$table->string('salary')->nullable();
 			$table->enum('rate', ['1', '2', '3', '4', '5'])->default('1');
-			// department_id
+
+			$table->foreignId('position_id')->nullable()->constrained('positions')->onDelete('cascade');
+			$table->foreignId('over_time_type_id')->nullable()->constrained('over_time_type')->onDelete('cascade');
+			$table->foreignId('period_id')->nullable()->constrained('periods')->onDelete('cascade');
 			$table->foreignId('department_id')->nullable()->constrained('departments')->onDelete('cascade');
-			// branch_id
 			$table->foreignId('branch_id')->nullable()->constrained('branches')->onDelete('cascade');
 			$table->rememberToken();
 			$table->timestamps();

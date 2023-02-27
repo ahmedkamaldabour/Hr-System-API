@@ -28,7 +28,6 @@ class RedirectIfAuthenticated
 			if (Auth::guard($guard)->check()) {
 				//				return redirect(RouteServiceProvider::HOME);
 				return $this->apiResponse(401, 'You are already logged in', 'null', 'null');
-
 			}
 		}
 
