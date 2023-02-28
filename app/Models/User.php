@@ -41,8 +41,6 @@ class User extends Authenticatable
 		= [
 			'password',
 			'remember_token',
-			'branch_id',
-			'department_id',
 			'created_at',
 			'updated_at',
 		];
@@ -72,19 +70,19 @@ class User extends Authenticatable
 	// user has many attendances
 	public function attendances()
 	{
-		return $this->hasMany(Attendance::class);
+		return $this->hasMany(Attendance::class, 'employee_id');
 	}
 
 	// user has one over time type
 	public function overTimeType()
 	{
-		return $this->hasOne(OverTimeType::class);
+		return $this->hasOne(OverTimeType::class, 'id', 'over_time_type_id');
 	}
 
 	// user has period
 	public function period()
 	{
-		return $this->hasOne(Period::class);
+		return $this->hasOne(Period::class, 'id', 'period_id');
 	}
 
 	// user has many vacations
@@ -96,6 +94,12 @@ class User extends Authenticatable
 	// user has many salaries
 	public function salaries()
 	{
-		return $this->hasMany(Salary::class);
+		return $this->hasMany(Salary::class, 'employee_id', 'id');
+	}
+
+	// user has one position
+	public function position()
+	{
+		return $this->hasOne(Position::class, 'id', 'position_id');
 	}
 }

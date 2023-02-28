@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeRequest;
 use App\Http\Traits\ApiTrait;
+use App\Models\Salary;
 use App\Models\User;
 use Illuminate\Http\Request;
+use function dd;
+use function print_r;
 use function redirect;
 
 class EmployeeController extends Controller
@@ -22,8 +25,16 @@ class EmployeeController extends Controller
 	public function index()
 	{
 		try {
-			// get all employees
-			$employees = $this->employee::paginate();
+
+			$employees = $this->employee::with('period', 'department', 'branch', 'position', 'overTimeType')->paginate();
+			foreach ($employees as $employee) {
+				$employee->period_id = $employee->period->period_name;
+				$employee->department_id = $employee->department->name;
+				$employee->branch_id = $employee->branch->name;
+				$employee->position_id = $employee->position->name;
+				$employee->over_time_type_id = $employee->overTimeType->type;
+				$employee->last_salary = Salary::where('employee_id', $employee->id)->latest()->first('amount');
+			}
 			return $this->apiResponse('200', 'All employees', 'null', $employees);
 		} catch (\Exception $e) {
 			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'null');
