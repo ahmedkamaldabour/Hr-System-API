@@ -1,9 +1,15 @@
 <?php
 
+use App\Http\Controllers\api\Salary\SalaryController;
+use App\Http\Controllers\api\Vacations\VacationsController;
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\OverTimeTypeController;
+use App\Http\Controllers\PeriodController;
+use App\Http\Controllers\PositionController;
 use App\Models\Branch;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -51,5 +57,16 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 	Route::Put('/employees/{id}', [EmployeeController::class, 'update'])->name('employees.update');
 	Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
 
+	Route::apiResource('/periods', PeriodController::class)->except('show');
+	Route::apiResource('/positions', PositionController::class)->except('show');
+	Route::apiResource('/overtimes', OverTimeTypeController::class)->except('show');
+	//	Route::apiResource('/attendances', AttendanceController::class)->except('show');
+	// Attendance routes
+	Route::get('/attendances', [AttendanceController::class, 'index'])->name('attendances');
+	Route::get('/attendances/{id}', [AttendanceController::class, 'show'])->name('attendances.show');
+	Route::post('/attend', [AttendanceController::class, 'addAttend'])->name('attendances.attend');
+	Route::post('/leaving/{id}', [AttendanceController::class, 'addLeave'])->name('attendances.store');
 
+	Route::apiResource('salary', SalaryController::class)->except('update', 'destroy');
+	Route::apiResource('vacations', VacationsController::class)->except('show');
 });

@@ -20,7 +20,7 @@ return new class extends Migration {
 			$table->double('working_hours')->nullable();
 			$table->double('overtime')->nullable()->default(0);
 			$table->date('attendance_date')->nullable();
-			$table->enum('attendance_status', ['present', 'absent', 'leave'])->default('present');
+			$table->enum('attendance_status', ['worked', 'present', 'absent'])->default('present');
 			$table->timestamps();
 		});
 	}
