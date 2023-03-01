@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\api\Vacations;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\VacationRequest;
+use App\Http\Requests\StoreVacationRequest;
+use App\Http\Requests\updateVacationRequest;
 use App\Http\Traits\ApiTrait;
 use App\Models\Vacation;
 use Illuminate\Http\Request;
@@ -19,8 +20,16 @@ class VacationsController extends Controller
 	 */
 	public function index()
 	{
-		$vacations = Vacation::paginate();
-		return $this->apiResponse('200', 'Data returned successfully', null, $vacations);
+		try {
+			$vacations = Vacation::paginate();
+			// get employee name and department name
+			foreach ($vacations as $vacation) {
+				$vacation->employee_name = $vacation->employee->name;
+			}
+			return $this->apiResponse('200', 'All vacations', 'null', $vacations);
+		} catch (\Exception $e) {
+			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
+		}
 	}
 
 	/**
@@ -29,12 +38,20 @@ class VacationsController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(VacationRequest $request)
+	public function store(StoreVacationRequest $request)
 	{
 		try {
-			$requests = $request->all();
-			$vacations = Vacation::create($requests);
-			return $this->apiResponse('201', 'Department Created', 'NULL', $vacations);
+			$vacations = Vacation::create(
+				[
+					'employee_id'   => $request->employee_id,
+					'start_date'    => $request->start_date,
+					'end_date'      => $request->end_date,
+					'vacation_type' => $request->vacation_type ? $request->vacation_type : 'pending',
+				]
+			);
+			// get employee name rather than employee id
+			$vacations->employee_name = $vacations->employee->name;
+			return $this->apiResponse('201', 'Vacation created', 'NULL', $vacations);
 		} catch (\Exception $e) {
 			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
 		}
@@ -47,15 +64,19 @@ class VacationsController extends Controller
 	 * @param  int                       $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(VacationRequest $request, $id)
+	public function update(UpdateVacationRequest $request, $id)
 	{
 		try {
 			$vacation = Vacation::find($id);
 			if (!$vacation) {
 				return $this->apiResponse('404', 'vacation not found', 'null', 'null');
 			}
-			$requests = $request->all();
-			$vacation->update($requests);
+			$vacation->update([
+				'start_date'    => $request->start_date ? $request->start_date : $vacation->start_date,
+				'end_date'      => $request->end_date ? $request->end_date : $vacation->end_date,
+				'vacation_type' => $request->vacation_type ? $request->vacation_type : 'pending',
+			]);
+			$vacations->employee_name = $vacations->employee->name;
 			return $this->apiResponse('201', 'vacation updated', 'NULL', $vacation);
 		} catch (\Exception $e) {
 			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
@@ -70,11 +91,15 @@ class VacationsController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$vacation = Vacation::find($id);
-		if (!$vacation) {
-			return $this->apiResponse('404', 'vacation not found', 'null', 'null');
+		try {
+			$vacation = Vacation::find($id);
+			if (!$vacation) {
+				return $this->apiResponse('404', 'vacation not found', 'null', 'null');
+			}
+			$vacation->delete();
+			return $this->apiResponse('200', 'vacation deleted', 'NULL', 'NULL');
+		} catch (\Exception $e) {
+			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
 		}
-		$vacation->delete();
-		return $this->apiResponse('200', 'Data deleted successfully', null, $vacation);
 	}
 }

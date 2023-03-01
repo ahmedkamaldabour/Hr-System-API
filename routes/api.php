@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\api\Salary\SalaryController;
-use App\Http\Controllers\api\Vacations\VacationsController;
+use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\VacationsController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BranchController;
