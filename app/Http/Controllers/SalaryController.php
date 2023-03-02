@@ -13,9 +13,10 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use function dd;
+use function public_path;
 use function Symfony\Component\Translation\t;
 
-class SalaryController extends Controller
+class  SalaryController extends Controller
 {
 	use ApiTrait;
 
@@ -92,5 +93,27 @@ class SalaryController extends Controller
 		} catch (\Exception $e) {
 			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
 		}
+
+	}
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function employeeSalary($id)
+	{
+		try {
+			// show custom salary ID
+			$salary = $this->salary::where("employee_id", $id)->get();
+			if ($salary->isEmpty()) {
+				return $this->apiResponse('404', 'Salary not found For this Id', 'null', 'null');
+			}
+			return $this->apiResponse('200', 'ALL Salary For This employee', null, $salary);
+		} catch (\Exception $e) {
+			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
+		}
+
 	}
 }

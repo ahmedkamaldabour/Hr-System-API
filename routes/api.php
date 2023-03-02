@@ -68,5 +68,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 	Route::post('/leaving/{id}', [AttendanceController::class, 'addLeave'])->name('attendances.store');
 
 	Route::apiResource('salary', SalaryController::class)->except('update', 'destroy');
+	Route::get('employee/salary/{id}', [SalaryController::class, 'employeeSalary'])->name('salary.employee.show');
 	Route::apiResource('vacations', VacationsController::class)->except('show');
 });
