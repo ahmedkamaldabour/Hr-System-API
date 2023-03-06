@@ -35,7 +35,6 @@ class  SalaryController extends Controller
 		} catch (\Exception $e) {
 			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
 		}
-
 	}
 
 	public function store(SalaryRequest $request)
@@ -93,7 +92,6 @@ class  SalaryController extends Controller
 		} catch (\Exception $e) {
 			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
 		}
-
 	}
 
 	/**
@@ -114,6 +112,5 @@ class  SalaryController extends Controller
 		} catch (\Exception $e) {
 			return $this->apiResponse('500', 'Internal Server Error', $e->getMessage(), 'NULL');
 		}
-
 	}
 }
