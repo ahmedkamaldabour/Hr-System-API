@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
 		\App\Models\Department::factory(5)->create();
 		\App\Models\Branch::factory(2)->create();
-		\App\Models\OvertimeType::factory(3)->create();
+		\App\Models\OverTimeType::factory(3)->create();
 		\App\Models\Period::factory(3)->create();
 		\App\Models\Position::factory(3)->create();
 		\App\Models\User::factory(10)->create();
