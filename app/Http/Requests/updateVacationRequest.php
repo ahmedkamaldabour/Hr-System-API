@@ -3,11 +3,11 @@
 namespace App\Http\Requests;
 
 use App\Http\Traits\ApiTrait;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Contracts\Validation\Validator;
 
-class SalaryRequest extends FormRequest
+class updateVacationRequest extends FormRequest
 {
 	use ApiTrait;
 
@@ -29,12 +29,13 @@ class SalaryRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			// validate on all requests
-			"employee_id" => "required|exists:users,id",
-			"amount"      => "required|integer",
-			"bonus"       => "sometimes|integer",
-			"deduction"   => "sometimes|integer",
-			"net_salary"  => "sometimes|integer",
+			// the start date must be before the end date and can be in the past
+			"start_date"    => "sometimes|required|date|before_or_equal:end_date",
+			"end_date"      => "sometimes|required|date|after_or_equal:start_date",
+			// start data and end date must be unique for each employee
+			"start_date"    => "unique:vacations,start_date,NULL,id,employee_id,".$this->employee_id,
+			"end_date"      => "unique:vacations,end_date,NULL,id,employee_id,".$this->employee_id,
+			"vacation_type" => "sometimes|required|in:approved,pending,rejected",
 		];
 	}
 

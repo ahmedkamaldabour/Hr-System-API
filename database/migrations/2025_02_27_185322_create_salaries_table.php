@@ -16,9 +16,9 @@ return new class extends Migration {
 			$table->id();
 			$table->foreignId('employee_id')->constrained('users');
 			$table->double('amount');
-			$table->double('over_time');
-			$table->double('bonus');
-			$table->double('deduction');
+			$table->double('over_time')->nullable();
+			$table->double('bonus')->nullable();
+			$table->double('deduction')->nullable();
 			$table->double('net_salary');
 			$table->timestamps();
 		});

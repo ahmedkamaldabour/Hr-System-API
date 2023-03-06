@@ -1838,14 +1838,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/departments/1/",
+							"raw": "{{url}}/departments/11/employees",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"departments",
-								"1",
-								""
+								"11",
+								"employees"
 							]
 						},
 						"description": "Get All employees in the same deparment"
@@ -2178,6 +2178,996 @@
 			]
 		},
 		{
+			"name": "Period",
+			"item": [
+				{
+					"name": "Get all Shifts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "period_name",
+									"value": "Ahmed2",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "08:00",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "16:00",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/periods",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"periods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "period_name",
+									"value": "Ahmed",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "08:00",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "16:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/periods/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"periods",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/periods/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"periods",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Position",
+			"item": [
+				{
+					"name": "Get all Positions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/positions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ahmed",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "New description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/positions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/periods/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"periods",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "NEW Ahmed",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Updateted",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/periods/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"periods",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OverTime_Types",
+			"item": [
+				{
+					"name": "Get all Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/overtimes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"overtimes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "Ahmed",
+									"type": "text"
+								},
+								{
+									"key": "hour_price",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/overtimes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"overtimes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/overtimes/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"overtimes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "NEW Ahmed",
+									"type": "text"
+								},
+								{
+									"key": "hour_price",
+									"value": "200",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/overtimes/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"overtimes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attendance",
+			"item": [
+				{
+					"name": "All Employee Attendances",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/attendances",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attendances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addLeave",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "leaving_time",
+									"value": "16:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/leaving/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"leaving",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addLeave Time",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "leaving_time",
+											"value": "16:00:00",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/leaving/7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"leaving",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 16:52:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 16:52:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Employee Leave Added\",\n    \"data\": {\n        \"id\": 4,\n        \"employee_id\": 7,\n        \"attendance_time\": \"08:00:00\",\n        \"leaving_time\": \"16:00:00\",\n        \"working_hours\": 8,\n        \"overtime\": 1,\n        \"attendance_date\": \"2002-09-29\",\n        \"attendance_status\": \"present\",\n        \"created_at\": \"2023-02-28T19:52:08.000000Z\",\n        \"updated_at\": \"2023-03-02T16:52:54.000000Z\"\n    },\n    \"errors\": \"null\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add Attend",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employee_id",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "attendance_time",
+									"value": "09:00:00",
+									"type": "text"
+								},
+								{
+									"key": "attendance_date",
+									"value": "2002-09-29",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/attend",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attend"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add Attend With time and date",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "employee_id",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "attendance_time",
+											"value": "09:00:00",
+											"type": "text"
+										},
+										{
+											"key": "attendance_date",
+											"value": "2002-09-29",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/attend",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attend"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 16:54:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 16:54:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Employee Attendance Added\",\n    \"data\": {\n        \"employee_id\": \"7\",\n        \"attendance_time\": \"09:00:00\",\n        \"attendance_date\": \"2002-09-29\",\n        \"attendance_status\": \"worked\",\n        \"updated_at\": \"2023-03-02T16:54:15.000000Z\",\n        \"created_at\": \"2023-03-02T16:54:15.000000Z\",\n        \"id\": 5\n    },\n    \"errors\": \"null\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Employee Attend",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/attendances/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attendances",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show selected Employee Attend By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/attendances/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attendances",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 16:54:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 16:54:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"Employee Attendance\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"employee_id\": 1,\n                \"attendance_time\": \"08:00:00\",\n                \"leaving_time\": \"16:00:00\",\n                \"working_hours\": 8,\n                \"overtime\": 1,\n                \"attendance_date\": \"2002-09-29\",\n                \"attendance_status\": \"present\",\n                \"created_at\": \"2023-02-27T21:19:23.000000Z\",\n                \"updated_at\": \"2023-02-28T19:49:10.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/attendances/1?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/attendances/1?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/attendances/1?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/attendances/1\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    },\n    \"errors\": \"null\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Vacations",
+			"item": [
+				{
+					"name": "All Vacations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/vacations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vacations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employee_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2023-06-16",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2023-06-18",
+									"type": "text"
+								},
+								{
+									"key": "vacation_type",
+									"value": "pending",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/vacations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vacations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vacation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "vacation_type",
+									"value": "approved",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/vacations/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vacations",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vacation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/vacations/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vacations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Salary",
+			"item": [
+				{
+					"name": "All Salaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/salary",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"salary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/salary?employee_id=1&amount=5000",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"salary"
+							],
+							"query": [
+								{
+									"key": "employee_id",
+									"value": "1"
+								},
+								{
+									"key": "amount",
+									"value": "5000"
+								},
+								{
+									"key": "bonus",
+									"value": "500",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/salary/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"salary",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employeeSalary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/employee/salary/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"employee",
+								"salary",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All salary for Emp By his id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/employee/salary/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employee",
+										"salary",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 17:19:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 17:19:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"200\",\n    \"message\": \"ALL Salary For This employee\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"employee_id\": 2,\n            \"amount\": 5000,\n            \"over_time\": 0,\n            \"bonus\": 0,\n            \"deduction\": 0,\n            \"net_salary\": 5000,\n            \"created_at\": \"2023-03-01T09:59:20.000000Z\",\n            \"updated_at\": \"2023-03-01T09:59:20.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Wrong Route",
 			"request": {
 				"method": "GET",
@@ -2256,7 +3246,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "9|oR6HUaC6OxL2vcR6V9vYZtohmIHfRD1x7l2IiBZr",
+				"value": "1|UGzhsHUgY9IuldAevyVhQSs6eFAiiVWZRAcAkhR5",
 				"type": "string"
 			}
 		]
@@ -2289,6 +3279,12 @@
 			"key": "url",
 			"value": "http://127.0.0.1:8000/api",
 			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "https://hrsystem.eraasoft.com/api",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
